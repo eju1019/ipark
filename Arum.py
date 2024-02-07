@@ -1,5 +1,6 @@
-# 딕셔너리 모양 문자열 칼럼 데이터프레임으로 만들기  
+import json
 
+# 딕셔너리 모양 문자열 칼럼 데이터프레임으로 만들기  
 def get_columns(columns_list: list):
     """" 딕셔너리 모양으로 들어간 문자열 칼럼을 데이터 프레임으로 변환해주는 함수  
     Args:
@@ -17,7 +18,5 @@ def get_columns(columns_list: list):
         df2 = df.drop(col, axis=1)
         df2 = pd.concat([df2, chagne_df], axis = 1)
     return df2
-    
-# df2 = df2.drop([col], axis=1)
 
 get_columns(json_columns)
