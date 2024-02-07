@@ -20,13 +20,12 @@ def get_columns(columns_list: list):
         pd.DataFrame: 데이터프레임
 
     """""
-    json_columns = ['device', 'geoNetwork', 'totals', 'trafficSource']
-
-    for col in json_columns:
+    for col in columns_list:
         chagne_df = pd.DataFrame(json.loads(row) for row in list(df[col]))
         chagne_df.columns = [f'{col}.{subcol}' for subcol in chagne_df.columns]
         df2 = df.drop(col, axis=1)
         df2 = pd.concat([df2, chagne_df], axis = 1)
     return df2
 
+json_columns = ['device', 'geoNetwork', 'totals', 'trafficSource']
 get_columns(json_columns)
