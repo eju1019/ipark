@@ -7,7 +7,7 @@ def get_columns(columns_list: list):
         columns_list(list): df(pd.DataFrame)에서 변환이 필요한 칼럼명 리스트 
 
     Returns:
-        pd.DataFrame: 각 딕셔너리 key와 values가 분리된 데이터프레임
+        pd.DataFrame: 데이터프레임
 
     """""
     json_columns = ['device', 'geoNetwork', 'totals', 'trafficSource']
