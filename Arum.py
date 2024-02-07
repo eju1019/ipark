@@ -1,4 +1,14 @@
+import pandas as pd 
+import matplotlib.pyplot as plt
+import seaborn as sns
+import sklearn
+import numpy as np
 import json
+
+# 파일 불러오기
+df = pd.read_csv('D:/2024 내일배움캠프/phython/A06_team_project/train.csv', encoding='utf-8')
+df.head(3)
+df.info()
 
 # 딕셔너리 모양 문자열 칼럼 데이터프레임으로 만들기  
 def get_columns(columns_list: list):
